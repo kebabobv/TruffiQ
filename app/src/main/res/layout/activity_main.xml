@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#101827">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- INTESTAZIONE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRUFFIK"
+            android:textColor="#27D6B5"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prototipo MVP"
+            android:textColor="#B8C4D5"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"/>
+
+        <!-- SCHERMATA QUIZ -->
+        <LinearLayout
+            android:id="@+id/quizScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- PUNTEGGIO -->
+            <TextView
+                android:id="@+id/scoreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XP: 0"
+                android:textColor="#27D6B5"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:layout_marginTop="25dp"/>
+
+            <!-- NUMERO DOMANDA -->
+            <TextView
+                android:id="@+id/questionNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MISSIONE 1 / 3"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"/>
+
+            <!-- CATEGORIA -->
+            <TextView
+                android:id="@+id/categoryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHISHING"
+                android:textColor="#27D6B5"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:background="#1E3440"
+                android:layout_marginTop="20dp"/>
+
+            <!-- MESSAGGIO SIMULATO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="#1E2B3E"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/senderText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mittente: Your Bank"
+                    android:textColor="#27D6B5"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/messageText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:lineSpacingExtra="6dp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:id="@+id/linkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFB86B"
+                    android:textSize="13sp"
+                    android:layout_marginTop="18dp"/>
+
+            </LinearLayout>
+
+            <!-- DOMANDA -->
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Questo messaggio è una truffa?"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp"/>
+
+            <!-- PULSANTE TRUFFA -->
+            <Button
+                android:id="@+id/scamButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="È UNA TRUFFA"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:backgroundTint="#C94D55"
+                android:layout_marginTop="20dp"
+                android:onClick="onScamClick"/>
+
+            <!-- PULSANTE SICURO -->
+            <Button
+                android:id="@+id/safeButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="È SICURO"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:backgroundTint="#168C72"
+                android:layout_marginTop="12dp"
+                android:onClick="onSafeClick"/>
+
+            <!-- FEEDBACK -->
+            <TextView
+                android:id="@+id/feedbackText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:lineSpacingExtra="5dp"
+                android:padding="20dp"
+                android:background="#1E3440"
+                android:layout_marginTop="25dp"
+                android:visibility="gone"/>
+
+            <!-- PROSSIMA DOMANDA -->
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="PROSSIMA DOMANDA"
+                android:textColor="#101827"
+                android:textStyle="bold"
+                android:backgroundTint="#27D6B5"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:onClick="onNextClick"/>
+
+        </LinearLayout>
+
+        <!-- SCHERMATA RISULTATI -->
+        <LinearLayout
+            android:id="@+id/resultScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TRAINING COMPLETED"
+                android:textColor="#27D6B5"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="70dp"/>
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:padding="25dp"
+                android:background="#1E2B3E"
+                android:layout_marginTop="35dp"/>
+
+            <Button
+                android:id="@+id/restartButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="RICOMINCIA"
+                android:textColor="#101827"
+                android:textStyle="bold"
+                android:backgroundTint="#27D6B5"
+                android:layout_marginTop="30dp"
+                android:onClick="onRestartClick"/>
+
+        </LinearLayout>
+
+        <!-- FOOTER -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TRUFFIQ • learn to stay safe"
+            android:textColor="#8290A5"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="15dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
